@@ -9,8 +9,13 @@ Console.Clear();
 int userInput = UserInput("Введите длину одномерного массива: ", "Ошибка ввода!");
 
 string[] array = new string[userInput];
+
 GetArray(array);
 PrintArray(array);
+
+string[] arrayFinish = GetArrayFinish(array);
+
+PrintArray(arrayFinish);
 
 int UserInput (string message, string errorMessage)
 {
@@ -38,4 +43,25 @@ void PrintArray(string[] array)
     {
         Console.Write($"{array[i]}, ");
     }
+}
+
+string[] GetArrayFinish(string[] inArray)
+{
+    int sizeArray = 0;
+    for (int i = 0; i < inArray.Length; i++)
+    {
+       if (inArray[i].Length <= 3) sizeArray++; 
+    }
+    string[] array = new string[sizeArray];
+    int index = 0;
+    for (int i = 0; i < inArray.Length; i++)
+    {
+ 
+        if (inArray[i].Length <= 3)
+        {
+            array[index] = inArray[i];
+            index++;
+        }
+    }
+    return array;
 }
