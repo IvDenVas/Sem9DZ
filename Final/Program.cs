@@ -6,16 +6,18 @@
 // ["Russia", "Denmark", "Kazan"] -> []
 
 Console.Clear();
-int userInput = UserInput("Введите длину одномерного массива: ", "Ошибка ввода!");
 
+int userInput = UserInput("Введите длину одномерного массива: ", "Ошибка ввода!");
 string[] array = new string[userInput];
 
 GetArray(array);
-PrintArray(array);
-
 string[] arrayFinish = GetArrayFinish(array);
 
+Console.Write("[");
+PrintArray(array);
+Console.Write("] -> [");
 PrintArray(arrayFinish);
+Console.Write("]");
 
 int UserInput (string message, string errorMessage)
 {
