@@ -41,7 +41,8 @@ void PrintArray(string[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write($"{array[i]}, ");
+        if (i == array.Length - 1) Console.Write($"\"{array[i]}\"");
+        else Console.Write($"\"{array[i]}\", ");
     }
 }
 
